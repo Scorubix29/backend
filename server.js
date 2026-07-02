@@ -6,7 +6,11 @@ require('dotenv').config();
 const app = express();
 
 // Middleware
-app.use(cors());
+// backend/server.js
+app.use(cors({
+  origin: 'https://frondend-omega.vercel.app' // Paste your actual Vercel URL here
+}));
+
 app.use(express.json());
 
 // Establish connection pool to MySQL
